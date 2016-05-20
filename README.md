@@ -1,6 +1,6 @@
 # Dockershare
 
-Dockershare provides a convenient way to expose a container's filesystem as a SMB/CIFS share.  It does this by running Samba inside the container and providing a script that can then symlink to the other container's filesystem on the same host.  Note, that the CoW filesystem of the container is being exposed here, rather than a volume on the host.  This is intentionally done, so that changes made over the share (e.g. via an editior or IDE) can be saved by running a simple "docker commit" command on the container.
+Dockershare provides a convenient way to expose a container's filesystem as a SMB/CIFS share.  It does this by running Samba inside the container and providing a script to symlink to another container's filesystem on the same host.  Note, that the CoW filesystem of the container is being exposed here, rather than a volume on the host.  This is intentionally done, so that changes made over the share (e.g. via an editior or IDE) can be saved by running a simple "docker commit" command on the container.
 
 The primary use case for Dockershare is for development purposes.  It allows a developer to modify a container's CoW filesystem via host applications and then commit the container to an image.  By committing the state of the container to an image, a developer can effectively make snapshots of any container throughout development, which can later be restored.
 

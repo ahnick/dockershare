@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.4
 MAINTAINER Xan Nick "xan.nick@gmail.com"
 # NOTE: Using alpine:edge due to Samba regression
 # for guest access effecting Mac OS X clients
